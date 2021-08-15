@@ -1,0 +1,526 @@
+<html>
+
+<HEAD>
+
+	<TITLE>Login</TITLE>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+
+	
+	
+	
+	$("#SignUp").click(function() {
+	alert('Nice to meet you!');
+		
+		
+		
+		if ($("#email").val()=="" || $("#pswd1").val()=="") {
+			alert('Email & Password is empty');
+			return false;
+		}
+		
+		//if ($("#email").val()== || $("#pswd1").val()=="") {
+			//alert('Password is empty');
+			//return false;
+		//}
+		
+		
+		var username =$("#email").val();
+		var passwd =$("#pswd1").val();
+		var mydata ="login="+username+"&password="+passwd;
+		alert(mydata);
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:1234/check_fav',
+			dataType:"text",
+			data:mydata,
+            success: function(data) {
+				alert("Processing");
+				if(data=="Processing"){
+					alert("Success");
+					localStorage.setItem("loginid", username);
+					localStorage.setItem("loginstatus", "OK");
+						//location.href="http://www.hyalinehk.com:9999/book";
+					location.href="http://127.0.0.1:1234/index.html";
+					
+				}else{
+					alert(data);
+				}
+				
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+    });
+	
+	
+	$("#LogIn").click(function() {
+	//alert('Welcome!');
+		
+		
+		
+		if ($("#email2").val()=="" || $("#pswd2").val()=="") {
+			alert('Email & Password is empty');
+			return false;
+		}
+		
+		//if ($("#email").val()== || $("#pswd1").val()=="") {
+			//alert('Password is empty');
+			//return false;
+		//}
+		
+		
+		var username =$("#email2").val();
+		var passwd =$("#pswd2").val();
+		var mydata ="login="+username+"&password="+passwd;
+		alert(mydata);
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:1234/123.3',
+			dataType:"text",
+			data:mydata,
+            success: function(data) {
+			alert("Processing");
+				if(data=="Processing"){
+					alert("Success");
+					localStorage.setItem("loginid", username);
+					localStorage.setItem("loginstatus", "OK");
+					//location.href="http://www.hyalinehk.com:9999/book";
+					location.href="http://127.0.0.1:1234/index.html";
+					
+				}else{
+					alert(data);
+				}
+				
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+    });
+	
+	
+	
+	});
+
+
+
+
+$(document).ready(function(){
+
+$(".log-in").click(function(){
+	$(".signIn").addClass("active-dx");
+	$(".signUp").addClass("inactive-sx");
+	$(".signUp").removeClass("active-sx");
+	$(".signIn").removeClass("inactive-dx");
+});
+
+$(".back").click(function(){
+	$(".signUp").addClass("active-sx");
+	$(".signIn").addClass("inactive-dx");
+	$(".signIn").removeClass("active-dx");
+	$(".signUp").removeClass("inactive-sx");
+});
+});
+
+<!--$( "[data-validator=true]" ).validator( {} );-->
+
+<!-- function check(){
+		// alert("Welcome Back");
+		// var email=document.getElementById("eMail").value;
+		//var ppwd=document.getElementById("password").value;
+	
+		//alert("eMail :"+eMail+"\n"+"password :"+ppwd);
+		//}
+		
+		-->
+
+
+
+		
+<!--function matchPassword() {  
+  //var pw1 = document.getElementById("pswd1").value;  
+  //var pw2 = document.getElementById("pswd2").value;  
+  //if(pw1 != pw2)  
+  //{   
+    //alert("Passwords did not match");  
+  //} else {  
+    //alert("Password created successfully"); 
+ 
+ //alert("eMail :"+eMail+"\n"+"password :"+ppwd);
+		//}
+  //}  
+//}  
+
+//one line usr and ppwd
+
+$(document).ready(function() {
+    var some_id = $('#some_id');
+    some_id.prop('type', 'text');
+    some_id.removeAttr('autocomplete');
+});
+
+
+
+</script>
+
+
+<style>
+@import 'https://fonts.googleapis.com/css?family=Dosis|Roboto:300,400';
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+	background-image: url('img/background_web.png');
+	background: #8ec38f;
+ 
+}
+
+
+
+
+button.back_to_previous_page {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	padding: 10px 28px 10px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: 700;
+	background: #7fad39;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	border: 4px solid #fff;
+	cursor: pointer;
+	margin-bottom: 20px;
+	transition:all 0.3s linear;
+
+}
+
+
+.container{
+  position:absolute;
+  width: auto;
+  height:auto;
+  top: calc(50% - 240px);
+  left: calc(50% - 160px);
+}
+
+div {
+  position: absolute;
+  text-align: center;
+  background: #fff;
+  width: 310px;
+  height: 470px;
+  border-radius: 5px;
+  padding: 30px 20px 0 20px;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+p {
+  font-family: Calibri, Helvetica, sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #87613d;
+  margin-bottom: 40px;
+}
+
+p > span {
+  padding-top: 3px;
+  display: block;
+  font-weight: 400;
+  font-size: 9px;
+}
+
+h3 {
+  font-family: Calibri, Helvetica;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #87613d;
+  margin-bottom: 30px;
+}
+
+input,
+button{
+  outline: none !important; 
+}
+
+button.fb {
+  border: none;
+  background: #3b5998;
+  width: 160px;
+  height: 25px;
+  font-family: Calibri, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 1px solid #29487d;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition:all 0.3s linear;
+}
+button.fb:hover {
+  background: #fff;
+  color: #3b5998;
+}
+
+button.form-btn {
+  position: absolute;
+  width: 50%;
+  height: 60px;
+  bottom: 0;
+  border: 0;
+  font-family: Calibri, Helvetica;
+  font-size: 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button.form-btn.sx {
+  left: 0;
+  border-radius: 0 0 0 5px;
+  background-color: rgba(192, 184, 46, 0.85);
+  color: #fff;
+  transition:all 0.3s linear;
+}
+
+button.form-btn.sx:hover {
+  background-color:rgba(224, 213, 0, 0.81);
+  color: #fff;
+}
+
+button.form-btn.sx.back {
+  background-color: rgba(0, 0, 0, 0.15);
+  transition:all 0.3s linear;
+}
+
+button.form-btn.sx.back:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+button.form-btn.dx {
+  right: 0;
+  border-radius: 0 0 5px 0;
+  background-color: #619f7e;
+  color: #fff;
+}
+
+input {
+  border: none;
+  border-bottom: 0.1 px solid #d4ffe8;
+  width: 85%;
+  font-family: Calibri, Helvetica;
+  color: #344f41;
+  text-align: center;
+  font-size: 21px;
+  font-weight:100;
+  margin-bottom:25px;
+}
+
+::-webkit-input-placeholder {
+   color: #7fad39;
+  font-family: Calibri, Helvetica;
+  font-weight:100;
+}
+
+:-moz-placeholder {
+   color: #7fad39;  
+  font-family: Calibri, Helvetica;
+  font-weight:100;
+}
+
+::-moz-placeholder {
+   color: #7fad39;  
+  font-family: Calibri, Helvetica;
+  font-weight:100;
+}
+
+:-ms-input-placeholder {  
+   color: #344f41; 
+  font-family: Calibri, Helvetica;
+  font-weight:100;
+}
+
+.signIn input,
+.signUp .w100 {
+  width: 100%;
+}
+
+.signIn{
+    z-index: 1;
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0.5;
+}
+
+.signUp {
+  z-index: 2;
+}
+
+.active-dx{
+  animation-name: foregrounding-dx;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.active-sx{
+  animation-name: foregrounding-sx;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.inactive-dx{
+  animation-name: overshadowing-dx;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.inactive-sx{
+  animation-name: overshadowing-sx;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes overshadowing-dx {
+  0%{
+    z-index:2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100%{
+    z-index: 1;
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0.5;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes overshadowing-sx {
+  0%{
+    z-index:2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100%{
+    z-index: 1;
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0.5;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes foregrounding-dx {
+  0%{
+    z-index:1;
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0.5;
+  }
+  50%{
+    z-index:2;
+    transform: perspective(100px) translate3d(400px, 0px, -30px);
+  }
+  100%{
+    z-index:2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes foregrounding-sx {
+  0%{
+    z-index:1;
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0.5;
+  }
+  50%{
+    z-index:2;
+    transform: perspective(100px) translate3d(-400px, 0px, -30px);
+  }
+  100%{
+    z-index:2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+</style>
+
+</HEAD>
+
+
+
+<BODY>
+
+
+
+<button class="back_to_previous_page"type="button" onclick="javascript:window.location.href='./index' "> 
+  <img src="img/logo.png" alt=""></button>
+
+
+
+  
+
+
+
+
+
+<form class="container">
+  <div class="signUp">
+    <h3>Create Your Account</h3>
+    <p>Just enter your email address</br>
+and your password for join.
+    </p>
+	
+	
+	
+
+	<input class="w100" type id="email" placeholder="Insert eMail" reqired autocomplete='off' />
+    <input type id="pswd1" placeholder="Insert Password" required />
+    
+    <button class ="form-btn sx log-in"  type="button">Log In</button>
+    <button class="form-btn dx" id="SignUp">SignUP</button> 
+	
+
+  </div>
+  <div class="signIn">
+    <h3>Welcome</br>Back !</h3>
+    <!--<button class="fb" type="button">Log In With Facebook</button>-->
+    <p>- or -</p>
+
+
+	
+	
+     <input type id="email2" placeholder="Insert eMail" autocomplete='off' reqired />
+    <input type id="pswd2" placeholder="Insert Password" required />
+
+    <button class="form-btn sx back" type="button">Back</button>
+    <button class="form-btn dx" id="LogIn">Log In</button> 
+	
+	
+
+	
+	
+  </div>
+</div>
+
+</BODY>
+
+
+
+</html>

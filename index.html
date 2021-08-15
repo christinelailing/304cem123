@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Herb in Graden">
+    <meta name="keywords" content="Herb, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herb in Graden | Home</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+	
+	
+	<!-- Important Owl stylesheet -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+
+	<!-- Default Theme -->
+	<link rel="stylesheet" href="css/owl.theme.css">
+
+	<!--  jQuery 1.7+  -->
+
+<!--fafa-->
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+
+
+
+	  
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+
+
+
+
+   <style>
+
+    </style>
+	
+<script>
+function search() {
+ 
+   var name = document.getElementById("searchForm").elements["searchItem"].value;
+   var pattern = name.toLowerCase();
+   var targetId = "";
+ 
+   var divs = document.getElementsByClassName("col-md-2");
+   for (var i = 0; i < divs.length; i++) {
+      var para = divs[i].getElementsByTagName("p");
+      var index = para[0].innerText.toLowerCase().indexOf(pattern);
+      if (index != -1) {
+         targetId = divs[i].parentNode.id;
+         document.getElementById(targetId).scrollIntoView();
+         break;
+      }
+   }  
+}
+</script>
+
+    <script>
+	
+   $(document).ready(function() {
+
+   
+	
+	$('.owl-carousel').owlCarousel();
+ 
+				$.ajax({
+					type: "GET",
+					url: "https://api.covid19api.com/summary",
+					dataType: "json",
+					success: function(result, status, xhr){
+					alert(result.Countries.length);
+					
+	
+					
+					$("#apiresult").html(result.Global.NewConfirmed);
+					for(i=0; i<result.Countries.length; i++){
+					
+					//$("#apiresult").html(result.Countries[i].NewConfirmed)};
+					$("#apiresult").append(result.Countries[i].CountryCode);
+					$("#apiresult").append("</n>");
+	
+
+}}
+ })				
+	
+
+
+				$.ajax({
+					type: "GET",
+					url: "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+					dataType: "json",
+					success: function(result, status, xhr){
+					alert(result.Countries.length);
+					
+	
+					
+					$("#apiresult").html(result.Global.NewConfirmed);
+					for(i=0; i<result.Countries.length; i++){
+					
+					//$("#apiresult").html(result.Countries[i].NewConfirmed)};
+					$("#apiresult").append(result.Countries[i].CountryCode);
+					$("#apiresult").append("</n>");
+	
+
+}}
+ })					
+
+ $("#hidden").hide();
+
+
+$("#button").click(function(){
+
+	alert("dB");
+	if ($('#model1').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model1: Oregano");
+	}
+
+	if ($('#model2').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model2: Dill");
+	}
+
+	if ($('#model3').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model3: Parsley");
+	}
+
+	if ($('#model4').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model4: Chervil");
+	}
+
+	if ($('#model5').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model5: Thyme");
+	}
+	
+		if ($('#model6').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model6: Sage");
+	}
+	
+	
+			if ($('#model7').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model7: Basil");
+	}
+	
+				if ($('#model8').is(":checked"))
+	{
+	<!-- it is checked-->
+	alert("model8: Basil");
+	}
+	
+	})
+	
+
+	$('#shopnow').click(function() {
+  
+	$("#hidden").show();
+
+})
+})
+
+
+   
+    </script>
+
+<script>
+
+function callme(mydata1,mydata2,mydata3){
+//alert(mydata);
+var username=localStorage.getItem("loginid");
+
+var mydata="login="+username+"&first="+mydata1+"&second="+mydata2+"&third="+mydata3;
+alert(mydata);
+$.ajax({
+					type: "POST",
+					url: "http://127.0.0.1:1234/fav1",
+					dataType: "text",
+					data:mydata,
+					success: function(result, status, xhr){
+					alert(result.Countries.length);
+					
+	
+					
+					$("#apiresult").html(result.Global.NewConfirmed);
+					for(i=0; i<result.Countries.length; i++){
+					
+					//$("#apiresult").html(result.Countries[i].NewConfirmed)};
+					$("#apiresult").append(result.Countries[i].CountryCode);
+					$("#apiresult").append("</n>");
+	
+
+}}
+ })	
+
+
+
+}
+
+
+</script>	
+</head>
+
+<body>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
+            </ul>`
+            <div class="header__cart__price">item: <span>$0.00</span></div>
+        </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__language">
+                <img src="img/language.png" alt="">
+                <div>English</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">Chinese</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+            <div class="header__top__right__auth">
+                <a href="123.2"><i class="fa fa-user" id:"#login"><body onload="load_data()"></i>Login</a>
+			<li  ><a id="#login" class="#login hide" style="display: none;"></a>
+				
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="./index">Home</a></li>
+                <!--<li><a href="./shop_grid">Shop</a></li>-->
+                <li><a href="#">Pages</a>
+                    <ul class="header__menu__dropdown">
+                     <!--   <li><a href="./shop-details">Shop Details</a></li>
+						<li><a href="./myfav">My favourites</a></li>
+                        <li><a href="./shoping-cart">Shoping Cart</a></li>
+                        <li><a href="./checkout">Check Out</a></li> 
+                        <li><a href="./blog-details">Blog Details</a></li> -->
+						<li><a href="./Meal-search">Meal Search</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog">Blog</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        </div>
+        <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i> hello@herbingarden.com</li>
+                <li>Free Shipping for all Order of $99</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> hello@herbingarden.com</li>
+                                <li>Free Shipping for all Order of $99</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="img/language.png" alt="">
+                                <div>English</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Chinese</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="123.2"><i class="fa fa-user"></i> Login</a>
+								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                          <!--  <li><a href="./shop_grid">Shop</a></li> -->
+                            <li><a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                         <!--           <li><a href="./shop-details">Shop Details</a></li>
+									<li><a href="./myfav">My favourites</a></li>
+                                    <li><a href="./shoping-cart">Shoping Cart</a></li>
+                                    <li><a href="./checkout">Check Out</a></li> 
+                                    <li><a href="./blog-details">Blog Details</a></li> -->
+									<li><a href="./Meal-search">Meal Search</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$0.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <!--<i class="fa fa-bars"></i>-->
+	
+                            <span>Music</span>
+                        </div>
+											<!--
+                        <ul>
+                            <li><a href="#">For Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">With Fresh Berries</a></li>
+                            <li><a href="#">With Ocean Foods</a></li>
+							<li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                       
+                            
+                        </ul>--->
+						</div>
+						
+												<!--music start-->
+					
+
+<div class="holdpart">
+  <div class="player">
+    <div class="details">
+      <div class="now-playing">PLAYING x OF y</div>
+	 
+      <div class="track-art"></div>
+      <div class="track-name">Track Name</div>
+      <div class="track-artist">Track Artist</div>
+    </div>
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-2x"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+    </div>
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
+
+  <!-- Load the main script for the player -->
+
+    <script src="js/main1.js"></script>
+					
+					<!--music end-->
+						
+                    </div>
+					
+                              <div class="hero__categories__all">
+                            <!--<i class="fa fa-bars"></i>-->
+	
+                            <span>Facebook</span>
+                        </div>
+<!-- fb-->
+					
+
+					<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v11.0" nonce="4Vtg1O7L"></script>
+
+
+<div class="fb-page" 
+data-tabs="timeline,events,messages""
+
+
+data-href="https://www.facebook.com/Cheer-Maker-133290398898745"
+data-width="350"
+data-height="400" >
+</div>
+<!-- fb-->
+					
+					
+				
+					
+					
+
+
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+					
+                        <div class="hero__search__form">
+						<form id="searchForm" action="javascript:search();">
+                            
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do you need?">
+                                <button type="submit" class="site-btn"onclick="document.getElementById('searchForm').submit(); return false;">SEARCH</button>
+							
+                            </form>
+
+							
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+852 9090 0991</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                        <div class="hero__text">
+                            <span>FRESH</span>
+                            <h2>Herb <br />100% Feel Good!</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn" id="shopnow">SHOP NOW</a>
+                        </div>
+						
+						
+                    </div>
+					
+					
+
+					
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hero Section End -->
+
+    <!-- Categories Section Begin -->
+   
+    <!-- Categories Section End -->
+
+    <!-- Featured Section Begin -->
+	
+	
+	
+	
+	
+    <section class="featured spad" id="hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Featured Product</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".oranges">New items</li>
+                            <li data-filter=".fresh-meat">Hit items</li>
+                            <li data-filter=".vegetables">Cooking</li>
+                            <li data-filter=".fastfood">Vege</li>
+							<!--<button id="button">*Add Remark</button>-->
+					
+					
+<body data-new-gr-c-s-check-loaded="14.1024.0" data-gr-ext-installed="" style="cursor: auto;">
+  <button id="select_fav" class="ui-button ui-widget ui-corner-all">My favourite</button>
+  
+                        </ul>
+	
+                    </div>
+<!--addition test-->
+
+
+   <script wfd-invisible="true">
+    $(document).ready(function(){
+	var msg="";
+      $("#select_fav" ).click(function(e) {
+	      $("#fruit_inputbox").dialog("open");
+	      e.preventDefault();
+        });
+      var confirm=function() {                  
+        var favorite_leaf=$("#favorite_leaf").val();
+        var favorite_leafs=$("[name=favorite_leafs]:radio:checked").val();
+         var arr=[];
+        $("[name=often_leaf]:checkbox:checked").each(function(){
+          arr.push($(this).val());
+          });
+       var often_leaf=arr.join(); 
+
+
+		
+		
+        var msg="First choose  : " + favorite_leaf + "<br>" +
+                "Second chooses : " + favorite_leafs + "<br>" + 
+                "My other chooses  : " + often_leaf; 
+				
+
+        $("#result_msgbox").html(msg);
+        $("#result_msgbox").dialog("open");
+        $(this).dialog("close");
+        }
+      $("#fruit_inputbox").dialog({
+        autoOpen: false,
+        modal: true,
+        title: "My Favourite",
+        buttons: {
+          "Leave": function() {$(this).dialog("close");},  //取消
+          "Enter": confirm //確定
+          }
+        });
+      $("#result_msgbox").dialog({
+        autoOpen: false,
+        modal: true,
+        title: "choose",
+        buttons: {Enter: function() {
+		//$(this).dialog("close");
+		 var favorite_leaf=$("#favorite_leaf").val();
+        var favorite_leafs=$("[name=favorite_leafs]:radio:checked").val();
+         var arr=[];
+        $("[name=often_leaf]:checkbox:checked").each(function(){
+          arr.push($(this).val());
+          });
+       var often_leaf=arr.join(); 
+var msg="First choose  : " + favorite_leaf + "<br>" +
+                "Second chooses : " + favorite_leafs + "<br>" + 
+                "My other chooses  : " + often_leaf; 
+				
+		//alert(msg);
+		callme(favorite_leaf,favorite_leafs,often_leaf);
+		}}
+        });
+      });
+  </script>
+
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable" 
+aria-describedby="fruit_inputbox" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width: 500px; top: 1px; left: 280px; display: none; z-index: 101;">
+<div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">資料選擇</span>
+<button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close">
+<span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button>
+</div><div id="fruit_inputbox" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 46px; max-height: none; height: auto;">
+    <p>First choose *****</p>
+    <p>
+      <select id="favorite_leaf">
+        <option>Oregano</option>
+        <option>Dill</option>
+        <option>Parsley</option>
+        <option>Chervil</option>
+        <option>Thyme</option>
+		<option>Sage</option>
+		<option>Basil</option>
+		<option>Cilantro (Coriander)</option>
+      </select>
+    </p>
+  
+	<p>Second chooses ****</p>
+    <p>
+      <input type="radio" name="favorite_leafs" id="model1" value="Oregano"> Oregano
+      <input type="radio" name="favorite_leafs" id="model2" value="Dill"> Dill
+      <input type="radio" name="favorite_leafs" id="model3" value="Parsley"> Parsley
+      <input type="radio" name="favorite_leafs" id="model4" value="Chervil"> Chervil
+      <input type="radio" name="favorite_leafs" id="model5" value="Thyme"> Thyme
+	  <input type="radio" name="favorite_leafs" id="model6" value="Sage"> Sage
+	  <input type="radio" name="favorite_leafs" id="model7" value="Basil"> Basil
+	  <input type="radio" name="favorite_leafs" id="model8" value="Cilantro (Coriander)"> Cilantro
+    </p>
+	
+	 <p>My other chooses ***:</p>
+    <p>
+      <input type="checkbox"  name="often_leaf" id="model1" value="Oregano"> Oregano
+      <input type="checkbox"  name="often_leaf" id="model2" value="Dill"> Dill
+      <input type="checkbox"  name="often_leaf" id="model3" value="Parsley"> Parsley
+      <input type="checkbox"  name="often_leaf" id="model4" value="Chervil"> Chervil
+      <input type="checkbox"  name="often_leaf" id="model5" value="Thyme"> Thyme
+	  <input type="checkbox" name="often_leaf" id="model6" value="Sage"> Sage
+	  <input type="checkbox"  name="often_leaf" id="model7" value="Basil"> Basil
+	  <input type="checkbox"  name="often_leaf" id="model8" value="Cilantro (Coriander)"> Cilantro
+    </p>
+    
+	
+    
+  </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+  <div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">取消</button>
+  <button type="button" class="ui-button ui-corner-all ui-widget">確定
+  </button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;">
+  </div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable" 
+  aria-describedby="result_msgbox" aria-labelledby="ui-id-2" style="position: absolute; height: auto; width: 300px; top: 218px; left: 341.5px; 
+  display: none; z-index: 102;" wfd-invisible="true"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+  <span id="ui-id-2" class="ui-dialog-title">選擇結果</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close"
+  title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div>
+  <div id="result_msgbox" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 47px; max-height: none; height: auto;">
+  first : A<br>second :B<br>third : C</div>
+  <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+  <div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">確定</button>
+  </div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;">
+  </div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>
+  <gdiv class="ginger-extension-writer" style="display: none;" wfd-invisible="true">
+  <gdiv class="ginger-extension-writer-frame"><iframe src="./jQuery UI 測試_files/index.html">
+  </iframe></gdiv></gdiv></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+
+ <!--addition test end-->					
+					
+
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
+                            <ul class="featured__item__pic__hover">
+                               <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li> 
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+					<!--	<ul class="list">
+<input type="checkbox" name="basicInfo[]"id="model1" value=model1>
+  <ul class="lists">-->
+
+							<h6><a href="#">Oregano</a></h6>
+							
+
+
+
+							
+					
+                            <h5>$25.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+						<!--	
+<input type="checkbox" name="basicInfo[]"id="model2" value=model2>-->
+                            <h6><a href="#">Dill</a></h6>
+
+                            <h5>$18.00</h5>
+							
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!-- <input type="checkbox" name="basicInfo[]"id="model3" value=model3>-->
+							<h6><a href="#">Parsley</a></h6>
+
+
+                            <h5>$37.00</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!--<input type="checkbox" name="basicInfo[]"id="model4" value=model4">-->
+                            <h6><a href="#">Chervil</a></h6>
+                            <h5>$24.00</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-5.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!--<input type="checkbox" name="basicInfo[]"id="model5" value=model5">-->
+                            <h6><a href="#">Thyme</a></h6>
+
+
+                            <h5>$16.00</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-6.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!--<input type="checkbox" name="basicInfo[]"id="model6" value=model6">-->
+                            <h6><a href="#">Sage</a></h6>
+                            <h5>$30.00</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-7.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!--<input type="checkbox" name="basicInfo[]"id="model7" value=model7">-->
+                            <h6><a href="#">Basil</a></h6>
+								<h5>$22.00</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+<!--<input type="checkbox" name="basicInfo[]"id="model8" value=model8">-->
+                            <h6><a href="#">Cilantro (Coriander)</a></h6>
+							<h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+   
+
+    <!-- Latest Product Section Begin -->
+   
+    <!-- Latest Product Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="from-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title from-blog__title">
+                        <h2>From The Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-1.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-2.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="blog-details">6 ways to prepare breakfast for 30</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-3.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Visit the clean farm in the US</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 1-2 Green Hill Road Hong Kong</li>
+                            <li>Phone:+852 9090 0991</li>
+                            <li>Email: hello@herbingarden.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+						
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<form id="searchForm" action="javascript:search();">
+<div style="border: 1px solid blue;">
+    Area 1 (for example a sidebar)
+    <div class="gcse-searchbox"></div>
+</div>
+
+<div style="border: 1px solid red;">
+    Area 2 (for example main area of the page)
+    <div class="gcse-searchresults"></div>
+</div>
+
+<div class="gcse-searchbox-only" data-resultsUrl="https://googlecustomsearch.appspot.com/elementv2/two-page_results_elements_v2.html?query=test"></div>
+</form>
+<!--search-->
+	  <script>
+function search() {
+ 
+   var name = document.getElementById("searchForm").elements["searchItem"].value;
+   var pattern = name.toLowerCase();
+   var targetId = "";
+ 
+   var divs = document.getElementsByClassName("col-md-2");
+   for (var i = 0; i < divs.length; i++) {
+      var para = divs[i].getElementsByTagName("p");
+      var index = para[0].innerText.toLowerCase().indexOf(pattern);
+      if (index != -1) {
+         targetId = divs[i].parentNode.id;
+         document.getElementById(targetId).scrollIntoView();
+         break;
+      }
+   }  
+}
+</script>
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                        <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p>
+  Copyright All rights reserved  <i class="fa fa-heart" aria-hidden="true"></i> 
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+
+	
+	
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+    
+</body>
+
+<div id="apiresult">--</div>
+
+
+
+
+</html>
+ 
